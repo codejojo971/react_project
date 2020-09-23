@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, ImageBackground, Button, TextInput } from 'react-native';
-import Login from "./Login/Login"
+import { SimpleLineIcons,Zocial,Fontisto,FontAwesome5 } from '@expo/vector-icons';
 
 
 const image ={uri : "https://preppykitchen.com/wp-content/uploads/2019/08/waffle-recipe-.jpg"};
@@ -16,24 +16,26 @@ export default function App() {
       <ImageBackground source={image} style={styles.image}>
         <View style= {styles.container1}>
           <View style= {styles.marginHeader}>
-            <Text style= {styles.blanc}  >Food Parlour</Text>
-            <Text style= {styles.textCenter}> CAFE - RESTAURANT</Text>
+            
+            <SimpleLineIcons name="cup" size={32} color="white" />
+            <Text style= {styles.blanc}  > <Text style= {styles.red}> Food </Text> Parlour</Text>
+            <Text style= {styles.textCenter}>  CAFE - RESTAURANT</Text>
           </View>
           <View style= {styles.marginTitle}> 
           
-            <Text style={styles.text}>Name</Text>
+            <Text style={styles.text}><FontAwesome5 name="user-alt" size={24} color="#DC143C" ></FontAwesome5> Name</Text>
             <TextInput
               style={{ height: 40, borderBottomColor: 'white', borderBottomWidth: 1 }}
               onChangeText={text => setNom(text)}
               value={nom}
             />
-            <Text style={styles.text}>Email</Text>
+            <Text style={styles.text}><Zocial name="email" size={24} color="#DC143C"></Zocial> Email</Text>
             <TextInput
               style={{ height: 40, borderBottomColor: 'white', borderBottomWidth: 1 }}
               onChangeText={text => setEmail(text)}
               value={email}
             />
-            <Text style={styles.text}>Phone</Text>
+            <Text style={styles.text}><Fontisto name="phone" size={24} color="#DC143C" ></Fontisto> Phone</Text>
             <TextInput
               style={{ height: 40, borderBottomColor: 'white', borderBottomWidth: 1 }}
               onChangeText={text => setPhone(text)}
@@ -41,7 +43,7 @@ export default function App() {
             />
             
             <Button color="#DC143C" title="Sign up"></Button>
-            <Text style={styles.text} >Already a Member ? Login</Text>
+            <Text style={styles.textFooter} >Already a Member ? Login</Text>
           </View>
         </View> 
       </ImageBackground> 
@@ -65,10 +67,11 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize:18,
     fontWeight:"regular",
+    textAlign:"left"
   },
   blanc:{
     color:"white",
-    fontSize:55,
+    fontSize:50,
     fontWeight:"regular",
     textAlign:"center",
    
@@ -90,7 +93,19 @@ const styles = StyleSheet.create({
 
   container1:{
     marginLeft:"2em",
-    marginRight:"2em"
-  }
+    marginRight:"2em",
+    textAlign:"center"
+  },
+  red:{
+    color:"#DC143C",
+    fontWeight: "bold"
+  },
+  textFooter:{
+    color: "white",
+    fontSize:18,
+    fontWeight:"regular",
+    textAlign:"center",
+    marginTop:"2em"
+  },
 
 });
